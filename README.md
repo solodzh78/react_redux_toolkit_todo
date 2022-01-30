@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Тренировочный проект список дел на React с использованием Redux Toolkit
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
