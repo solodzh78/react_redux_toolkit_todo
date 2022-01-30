@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+
   text-align: center;
 }
 .checkbox:checked + span {
@@ -13,7 +13,6 @@
   color: red;
   margin-left: 5px;
   font-weight: bold;
-
 }
 
 .items {

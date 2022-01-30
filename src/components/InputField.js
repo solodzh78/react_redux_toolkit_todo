@@ -2,21 +2,22 @@ import { useState } from "react";
 
 const Inputfield = ({ addTask }) => {
   const [text, setText] = useState('');
-  const onAddTodo = () => {
+  const onAddTodo = e => {
+    e.preventDefault();
     addTask(text);
     setText('');
   };
   return (
     <div>
-      <div>
+      <form onSubmit={onAddTodo}>
         <input
           type={"text"}
           placeholder="Введите текст"
           value={text}
           onChange={(e) => setText(e.target.value.toString())}
         />
-        <button onClick={onAddTodo}>Добавить</button>
-      </div>
+        <button type="submit">Добавить</button>
+      </form>
     </div>
   );
 };

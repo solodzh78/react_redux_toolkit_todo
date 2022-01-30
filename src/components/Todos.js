@@ -3,7 +3,7 @@ import ItemTodo from "./ItemTodo";
 
 const Todos = () => {
 
-  const todos = useSelector(state => state.todos.todos);
+  const todos = [...useSelector(state => state.todos.todos)].reverse();
   return (
     <ul className="items">
       {todos.length > 0 &&
