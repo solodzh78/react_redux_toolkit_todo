@@ -1,22 +1,23 @@
 import { useDispatch } from 'react-redux';
 
-import { removeTodo, toggleTodoIsCompleted } from '../store/todoSlice';
+import { removeTodoOnServer, toggleTodoIsCompletedOnServer } from '../store/todoSlice';
 
 
-const ItemTodo = ({ id, text, isCompleted }) => {
+const ItemTodo = ({ id, title, completed }) => {
 
   const dispatch = useDispatch();
+  
   return (
     <li className="item">
       <input
         name="checkBox"
         type={"checkbox"}
-        checked={isCompleted}
-        onChange={() => dispatch(toggleTodoIsCompleted({id}))}
+        checked={completed}
+        onChange={() => dispatch(toggleTodoIsCompletedOnServer(id))}
         className="checkbox"
       />
-      <span className="text">{text}</span>
-      <span onClick={() => dispatch(removeTodo({id}))} className="remove">
+      <span className="text">{title}</span>
+      <span onClick={() => dispatch(removeTodoOnServer(id))} className="remove">
         &times;
       </span>
     </li>
